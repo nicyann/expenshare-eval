@@ -5,24 +5,24 @@ import {NavLink} from "react-router-dom";
 class Menu extends Component {
     render() {
         return (
+
             <Navbar color="light" light expand="md">
                 <NavbarBrand>Expenshare</NavbarBrand>
                 <Collapse isOpen={true} navbar>
                     <Nav className="ml-auto" navbar>
                         <NavItem>
-                            <NavLink to="/expenshare" className="nav-link">Expenshare</NavLink>
-                        </NavItem>
-                        <NavItem>
-                            <NavLink to="/dashboard" className="nav-link">Dashboard</NavLink>
+                            <NavLink to={this.props.url} className="nav-link">Dashboard</NavLink>
                         </NavItem>
                         <NavItem>
                             <NavLink to="/" exact className="nav-link">Accueil</NavLink>
                         </NavItem>
                         <NavItem>
-                            <NavLink to="/personne" className="nav-link">personne</NavLink>
+                            <NavLink to={this.props.url +"/expenses"} className="nav-link">Dépenses</NavLink>
+                        </NavItem>
+                        <NavItem>
+                            <NavLink to={this.props.url + "/persons"} className="nav-link">personne</NavLink>
                         </NavItem>
                     </Nav>
-
 
 
                 </Collapse>

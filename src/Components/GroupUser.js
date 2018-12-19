@@ -19,6 +19,7 @@ class GroupUser extends Component {
             .then(response => response.json())
             .then(data => this.setState({persons: data}))
         ;
+
     }
 
 

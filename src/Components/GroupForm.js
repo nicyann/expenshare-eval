@@ -15,7 +15,7 @@ class GroupForm extends Component {
         event.preventDefault();
         this.setState({ slug: event.target.value });
     }
-
+88
     handleCreate(event) {
         event.preventDefault();
         fetch('http://php/EVAL-REACT/expenshare/public/sharegroup/', {
@@ -24,7 +24,6 @@ class GroupForm extends Component {
         })
             .then(response => response.json())
             .then(data => {
-                console.log(data);
                 alert('Nouveau groupe créé avec succès !');
             })
             .catch(err => alert('Erreur lors de la création du groupe'))
@@ -36,7 +35,6 @@ class GroupForm extends Component {
         fetch('http://php/EVAL-REACT/expenshare/public/sharegroup/' + this.state.slug)
             .then(response => response.json())
             .then(data => {
-                console.log(data);
                 this.setState({ sharegroup: JSON.parse(data) });
             })
             .catch(err => alert('Ce groupe n\'existe pas !'))
@@ -48,7 +46,7 @@ class GroupForm extends Component {
     render() {
 
         if (this.state.sharegroup) {
-            return <Redirect to={'/group/' + this.state.sharegroup.slug}></Redirect>
+            return <Redirect to={'/group/' + this.state.sharegroup.slug}/>
         }
 
         return (
