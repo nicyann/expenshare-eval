@@ -7,10 +7,14 @@ import GroupUser from "./Components/GroupUser";
 import Menu from "./Components/Menu";
 import Expense from "./Components/Expenses";
 import Group from "./Components/Group";
+import { library } from '@fortawesome/fontawesome-svg-core';
+import { faGasPump,  faHotel, faUtensils, faTaxi , faShoppingCart,faFutbol} from '@fortawesome/free-solid-svg-icons';
 
-
+library.add(faGasPump, faHotel, faUtensils,faTaxi,faShoppingCart, faFutbol );
 
 class App extends Component {
+
+
     render() {
         return (
 

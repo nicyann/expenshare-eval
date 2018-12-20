@@ -13,7 +13,7 @@ console.log()
                 <h1>{this.props.match.params.slug}</h1>
                 <Menu url={this.props.match.url}/>
                 <Route path={this.props.match.url} exact component={Dashboard}/>
-                <Route path={this.props.match.url + '/expenses'}  component={Expenses}/>
+                <Route path={this.props.match.url + '/expenses'}  render={props => <Expenses {...props} slug={this.props.match.params.slug}/>} />
                 <Route path={this.props.match.url + '/persons'}  render={props => <Persons {...props} slug={this.props.match.params.slug} />}/>
                 </div>
         );

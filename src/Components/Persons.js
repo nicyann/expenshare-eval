@@ -1,4 +1,5 @@
 import React, {Component} from 'react';
+import Table from "react-bootstrap/es/Table";
 
 class Persons extends Component {
 
@@ -19,21 +20,33 @@ class Persons extends Component {
         const persons = this.state.persons.map(person => {
             let total = person.expenses.reduce((accumulator, expense) => accumulator + parseFloat(expense.amount), 0);
             return (
-                <li>
-                    {person.firstname}<br/>
-                    {person.expenses.length} dépense(s)<br/>
-                    {total}€
-                </li>
+
+                    <tr>
+                    <td>{person.firstname}</td>
+                    <td>{person.expenses.length} </td>
+                    <td>{total}€</td>
+                    </tr>
+
             );
         });
 
         return (
-            <React.Fragment>
+            <div className="container">
                 <h2>Liste des personnes</h2>
-                <ul>
+
+                <Table>
+                    <thead>
+                    <tr>
+                        <th>Nom</th>
+                        <th>Nombre</th>
+                        <th>Somme</th>
+                    </tr>
+                    </thead>
+                    <tbody>
                     {persons}
-                </ul>
-            </React.Fragment>
+                    </tbody>
+                </Table>
+            </div>
         );
     }
 }
